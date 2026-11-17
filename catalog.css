@@ -137,6 +137,13 @@ h1 {
   line-height: 1.55;
 }
 
+.model .generation-time {
+  margin-top: 12px;
+  color: #455240;
+  font-size: 13px;
+  font-weight: 600;
+}
+
 .open {
   display: inline-flex;
   align-items: center;

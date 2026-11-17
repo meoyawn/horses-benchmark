@@ -8,16 +8,25 @@ A catalog of interactive 3D horses built from a shared prompt. [Open the catalog
 
 ## Models
 
-- [`62solmax`](./62solmax/) builds a procedural bay horse with close-up views and animated gaits. [Open 62solmax](https://horses.adelnz.com/62solmax/).
+- [`62solmax`](./62solmax/) is a procedural bay horse with close-up views and animated gaits. It was generated in 30 minutes. [Open 62solmax](https://horses.adelnz.com/62solmax/).
 
 ## Development
 
+Use mise and Node.js 26 to set up the project.
+
 ```sh
-npm ci
-npm run dev
+mise install
+mise exec -- aube install --frozen-lockfile
+mise exec -- aube run dev
 ```
 
-`npm run build` writes the catalog and model pages to `dist/`. `npm run preview` serves that build locally.
+`aube run build` writes the catalog and model pages to `dist/`. `aube run preview` serves that build locally.
+
+## Deployment
+
+GitHub Actions builds pull requests and deploys `main` to the `horses` Cloudflare Pages project. It authenticates with the repository's `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` secrets.
+
+With those credentials in your environment, run `mise exec -- aube run build` followed by `mise exec -- aube run deploy` to upload a local build.
 
 ## License
 
