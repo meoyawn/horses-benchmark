@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f3eb" />
+    <meta name="description" content="An interactive 3D study of a bay horse, from its coat and markings to the rhythm of its gaits." />
+    <link rel="icon" href="data:," />
+    <title>Bay Horse — Equine Atlas</title>
+    <link rel="stylesheet" href="assets/horse.css" />
+    <script type="module" src="assets/horse.js"></script>
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="brand"><canvas class="brand-mark" data-symbol="horse" width="40" height="40" aria-hidden="true"></canvas><span>Equine Atlas</span></div>
+      <button class="help-button" id="show-help" type="button" aria-haspopup="dialog"><span class="help-icon" aria-hidden="true">?</span> Controls</button>
+    </header>
+
+    <main class="workspace">
+      <section class="intro" aria-labelledby="title">
+        <p class="species"><i>Equus caballus</i></p>
+        <h1 id="title">The bay<br class="title-break" /> horse</h1>
+        <p class="lede">A reddish-brown coat with a black mane, tail, and lower legs. Explore the horse from every angle and watch its gaits.</p>
+      </section>
+
+      <section class="camera-panel" aria-labelledby="camera-title">
+        <h2 class="eyebrow" id="camera-title">Camera views</h2>
+        <div class="views" role="group" aria-labelledby="camera-title">
+          <button class="view-button" type="button" data-view="horse" aria-pressed="true"><canvas data-symbol="frame" width="20" height="20" aria-hidden="true"></canvas> Full horse<span class="view-indicator" aria-hidden="true"></span></button>
+          <button class="view-button" type="button" data-view="head" aria-pressed="false"><canvas data-symbol="head" width="20" height="20" aria-hidden="true"></canvas> Head &amp; markings<span class="view-indicator" aria-hidden="true"></span></button>
+          <button class="view-button" type="button" data-view="legs" aria-pressed="false"><canvas data-symbol="hoof" width="20" height="20" aria-hidden="true"></canvas> Legs &amp; hooves<span class="view-indicator" aria-hidden="true"></span></button>
+        </div>
+        <p class="view-note" id="view-note" aria-live="polite">Follow the topline from the withers, across the back, to the rounded croup above the tail.</p>
+      </section>
+
+      <section class="viewer" aria-label="Interactive horse viewer" aria-busy="true">
+        <div class="stage" id="stage">
+          <canvas id="scene" tabindex="0" aria-label="Three-dimensional bay horse" aria-describedby="camera-hint"></canvas>
+          <div class="loading" id="loading" role="status">Preparing the 3D view…</div>
+          <button type="button" class="reset-button stage-button" id="reset" aria-label="Reset camera view"><canvas data-symbol="reset" width="18" height="18" aria-hidden="true"></canvas><span>Reset view</span></button>
+          <div class="stage-bottom">
+            <p class="camera-hint" id="camera-hint"><canvas data-symbol="orbit" width="20" height="20" aria-hidden="true"></canvas><span class="mouse-hint">Drag to orbit <b>·</b> Scroll to zoom</span><span class="touch-hint">Drag to orbit <b>·</b> Pinch to zoom</span></p>
+            <div class="zoom" role="group" aria-label="Zoom">
+              <button class="stage-button" type="button" id="zoom-out" aria-label="Zoom out">−</button>
+              <button class="stage-button" type="button" id="zoom-in" aria-label="Zoom in">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="movement">
+          <div class="gait-control">
+            <h2 class="eyebrow" id="movement-title">Movement</h2>
+            <div class="gaits" role="group" aria-labelledby="movement-title">
+              <button type="button" data-gait="stand" aria-pressed="true">Stand</button>
+              <button type="button" data-gait="walk" aria-pressed="false">Walk</button>
+              <button type="button" data-gait="trot" aria-pressed="false">Trot</button>
+              <button type="button" data-gait="canter" aria-pressed="false">Canter</button>
+            </div>
+          </div>
+          <div class="playback">
+            <div class="speed-control">
+              <label for="speed">Speed</label><output id="rate" for="speed">1×</output>
+              <input type="range" id="speed" min="0.25" max="1.5" step="0.25" value="1" aria-valuetext="1 times speed" />
+            </div>
+            <button class="pause-button" type="button" id="pause" aria-label="Pause movement" title="Pause movement"><span class="playback-icon" aria-hidden="true"></span></button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="controls" aria-labelledby="help-title">
+      <h2 id="help-title">Viewer controls</h2>
+      <dl>
+        <dt>Orbit</dt><dd>Drag across the horse or use the arrow keys with the viewer focused.</dd>
+        <dt>Zoom</dt><dd>Scroll, pinch, use the zoom buttons, or press + and −.</dd>
+        <dt>Reset view</dt><dd>Select Reset view or press Home.</dd>
+        <dt>Pause or play</dt><dd>Use the playback button or press Space with the viewer focused.</dd>
+      </dl>
+      <form method="dialog"><button class="close-help" type="submit" autofocus>Done</button></form>
+    </dialog>
+  </body>
+</html>
