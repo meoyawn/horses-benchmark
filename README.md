@@ -8,7 +8,7 @@ A catalog of interactive 3D horses built from a shared prompt. [Open the catalog
 
 ## Models
 
-- [`62solmax`](./62solmax/) is a procedural bay horse with close-up views and animated gaits. It was generated in 30 minutes. [Open 62solmax](https://horses.adelnz.com/62solmax/).
+- [`62solmax`](./62solmax/) is a procedural bay horse with close-up views and animated gaits. The model has 120,011 vertices and 22 bones. It was generated in 30 minutes. [Open 62solmax](https://horses.adelnz.com/62solmax/).
 
 ## Development
 
