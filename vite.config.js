@@ -9,6 +9,7 @@ export default defineConfig({
       input: {
         catalog: resolve(import.meta.dirname, 'index.html'),
         '62solmax': resolve(import.meta.dirname, '62solmax/index.html'),
+        '62astramax': resolve(import.meta.dirname, '62astramax/index.html'),
       },
     },
   },

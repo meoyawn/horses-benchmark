@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7f7f2" />
+  <meta name="description" content="Explore an original, procedurally sculpted Thoroughbred in a live three-dimensional equine study." />
+  <title>62astramax · Equine Atlas</title>
+  <link rel="icon" type="image/svg+xml" href="./horse-mark.svg" />
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="./" aria-label="Equine Atlas home">
+        <img src="./horse-mark.svg" width="38" height="38" alt="" />
+        <span>Equine <i>Atlas</i></span>
+      </a>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <button type="button" class="nav-item current" id="studio-tab" aria-current="page">Model studio</button>
+        <button type="button" class="nav-item" data-open="notes-dialog">Field notes</button>
+      </nav>
+      <button class="guide-link" type="button" aria-label="Quick guide" data-open="guide-dialog"><span data-icon="help"></span><span>Quick guide</span></button>
+    </div>
+  </header>
+  <main>
+    <section class="specimen-heading" aria-labelledby="specimen-name">
+      <div>
+        <p class="taxonomy"><span></span>Equus ferus caballus</p>
+        <h1 id="specimen-name">Thoroughbred</h1>
+      </div>
+      <dl class="specimen-data">
+        <div><dt>Origin</dt><dd>England</dd></div>
+        <div><dt>Breed type</dt><dd>Light horse</dd></div>
+      </dl>
+    </section>
+    <div class="workspace">
+      <section class="stage" id="stage" aria-label="Interactive horse viewer" aria-busy="true">
+        <canvas id="horse-canvas" tabindex="0" role="img" aria-label="Three-dimensional Thoroughbred. Drag or use the arrow keys to orbit."></canvas>
+        <div class="stage-grain" aria-hidden="true"></div>
+        <div class="live-pill"><span class="status-dot"></span>Live 3D</div>
+        <button type="button" id="expand" class="glass-button expand" aria-label="Expand viewer" title="Expand viewer"><span data-icon="expand"></span></button>
+        <div class="stage-load" id="stage-load" role="status"><span class="loading-orbit"></span><span>Preparing the model…</span></div>
+        <div class="gesture-hint" aria-hidden="true">
+          <span data-icon="orbit"></span><span>Drag to orbit</span><i></i><span class="desktop-gesture">Scroll to zoom</span><span class="touch-gesture">Pinch to zoom</span>
+        </div>
+        <div class="zoom-tools" aria-label="Camera zoom">
+          <button type="button" id="zoom-out" aria-label="Zoom out" title="Zoom out"><span data-icon="minus"></span></button>
+          <span></span>
+          <button type="button" id="zoom-in" aria-label="Zoom in" title="Zoom in"><span data-icon="plus"></span></button>
+        </div>
+      </section>
+      <aside class="controls-panel" aria-labelledby="controls-heading">
+        <div class="panel-heading"><h2 id="controls-heading">Studio controls</h2><span data-icon="sliders"></span></div>
+        <div class="control-section coat-section">
+          <h3 id="coat-label">Coat colour</h3>
+          <div class="coats" role="group" aria-labelledby="coat-label">
+            <button class="coat-option" data-coat="bay" aria-pressed="true"><span class="swatch bay"></span><span>Bay</span></button>
+            <button class="coat-option" data-coat="chestnut" aria-pressed="false"><span class="swatch chestnut"></span><span>Chestnut</span></button>
+            <button class="coat-option" data-coat="grey" aria-pressed="false"><span class="swatch grey"></span><span>Grey</span></button>
+          </div>
+        </div>
+        <div class="control-section motion-section">
+          <div class="control-title"><h3 id="motion-label">Movement</h3><button id="playback" class="playback" type="button" aria-label="Pause animation" title="Pause animation"><span data-icon="pause"></span></button></div>
+          <div class="motions" role="group" aria-labelledby="motion-label">
+            <button data-motion="idle" type="button" aria-pressed="true">Stand</button>
+            <button data-motion="walk" type="button" aria-pressed="false">Walk</button>
+            <button data-motion="trot" type="button" aria-pressed="false">Trot</button>
+          </div>
+          <div class="speed-heading"><label for="speed">Playback speed</label><output for="speed" id="speed-value">1×</output></div>
+          <input id="speed" type="range" min="0.5" max="1.5" step="0.25" value="1" aria-valuetext="1 times normal speed" />
+        </div>
+        <div class="camera-section">
+          <label for="auto-orbit"><span data-icon="rotate-3d"></span>Auto-rotate</label>
+          <button type="button" id="auto-orbit" role="switch" aria-checked="false" aria-label="Auto-rotate camera" class="switch"><span></span></button>
+        </div>
+        <button type="button" id="reset-view" class="reset-button"><span data-icon="reset"></span>Reset view</button>
+      </aside>
+    </div>
+    <section class="observation" aria-labelledby="observation-title">
+      <div class="observation-symbol" aria-hidden="true"><span data-icon="hoof"></span></div>
+      <div class="observation-copy">
+        <p class="eyebrow">Gait observation</p><h2 id="observation-title">Standing at rest</h2>
+        <p id="observation-text">Watch the ears turn, the head settle and the tail sway as the horse stands.</p>
+      </div>
+      <div class="contact-chart" aria-label="Live hoof contact">
+        <p class="eyebrow"><span class="contact-key"></span>Hoof contact</p>
+        <div class="feet">
+          <span data-foot="0" class="grounded" title="Left fore"><span data-icon="foot"></span><abbr title="Left fore">LF</abbr></span>
+          <span data-foot="1" class="grounded" title="Right fore"><span data-icon="foot"></span><abbr title="Right fore">RF</abbr></span>
+          <span data-foot="2" class="grounded" title="Left hind"><span data-icon="foot"></span><abbr title="Left hind">LH</abbr></span>
+          <span data-foot="3" class="grounded" title="Right hind"><span data-icon="foot"></span><abbr title="Right hind">RH</abbr></span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <dialog id="notes-dialog" class="drawer">
+    <div class="dialog-head"><span class="dialog-icon" data-icon="book"></span><button type="button" data-close aria-label="Close field notes"><span data-icon="close"></span></button></div>
+    <h2>Field notes</h2><p class="dialog-subtitle">Thoroughbred <em>· Equus ferus caballus</em></p>
+    <section><h3>Form</h3><p>Follow the crest from the poll between the ears down to the withers above the shoulder. From the side, the topline dips gently behind the withers before rising over the hindquarters.</p></section>
+    <section><h3>Coat and markings</h3><p>The bay has a brown body with a dark mane, tail and lower legs. Switch to chestnut to see warmer points, or grey to reveal dappling across the barrel. The star on the forehead and the hind sock identify this individual in each coat.</p></section>
+    <section><h3>Reading the gait</h3><p>At a walk, the hooves land in four separate beats. In trot, the diagonal pairs move together. Slow the playback and follow the hoof contact display to see the rhythm.</p></section>
+    <div class="authorship"><span data-icon="cube"></span><p>This model, its markings and its motion were built procedurally for Equine Atlas in Three.js.</p></div>
+  </dialog>
+  <dialog id="guide-dialog" class="drawer guide-dialog">
+    <div class="dialog-head"><span class="dialog-icon" data-icon="help"></span><button type="button" data-close aria-label="Close quick guide"><span data-icon="close"></span></button></div>
+    <h2>Quick guide</h2>
+    <p class="dialog-subtitle">Move around the horse and inspect its gait.</p>
+    <ul class="key-list">
+      <li><span>Orbit the model</span><b>Drag</b></li><li><span>Zoom in or out</span><b>Scroll or pinch</b></li>
+      <li><span>Focus on a detail</span><b>Double-click the horse</b></li>
+      <li><span>Pan across the model</span><b>Shift + drag or two fingers</b></li>
+      <li><span>Orbit with the viewer focused</span><b>Arrow keys</b></li>
+      <li><span>Pause or resume</span><kbd>Space</kbd></li><li><span>Stand, walk, trot</span><b><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd></b></li>
+      <li><span>Reset the camera</span><kbd>R</kbd></li><li><span>Toggle full screen</span><kbd>F</kbd></li>
+    </ul>
+  </dialog>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
