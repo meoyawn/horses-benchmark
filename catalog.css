@@ -123,13 +123,8 @@ h1 {
   padding: clamp(22px, 4.3vw, 57px);
 }
 
-.model-id {
-  color: #5c654f;
-  font: 600 13px/1.3 ui-monospace, "SF Mono", Menlo, monospace;
-}
-
 .model h2 {
-  margin: 10px 0 11px;
+  margin: 0 0 11px;
   font: 500 clamp(35px, 4.25vw, 59px)/.96 var(--serif);
   letter-spacing: -.06em;
 }

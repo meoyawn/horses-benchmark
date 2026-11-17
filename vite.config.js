@@ -8,7 +8,7 @@ export default defineConfig({
     rolldownOptions: {
       input: {
         catalog: resolve(import.meta.dirname, 'index.html'),
-        equineAtlas: resolve(import.meta.dirname, '62solmax/index.html'),
+        '62solmax': resolve(import.meta.dirname, '62solmax/index.html'),
       },
     },
   },

@@ -8,7 +8,7 @@ A catalog of interactive 3D horses built from a shared prompt. [Open the catalog
 
 ## Models
 
-- [`62solmax`](./62solmax/) builds a procedural bay horse with close-up views and animated gaits. [Open Equine Atlas](https://horses.adelnz.com/62solmax/).
+- [`62solmax`](./62solmax/) builds a procedural bay horse with close-up views and animated gaits. [Open 62solmax](https://horses.adelnz.com/62solmax/).
 
 ## Development
 
