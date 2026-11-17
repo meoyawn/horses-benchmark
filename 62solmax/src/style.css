@@ -50,6 +50,20 @@ button canvas { display: block; flex: none; }
   border-radius: 50%;
 }
 
+.header-actions { display: flex; align-items: center; gap: clamp(9px, 2vw, 23px); }
+
+.back-link {
+  padding: 7px 0;
+  color: #454e40;
+  font-size: 13px;
+  font-weight: 550;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.back-link:hover { color: #795121; }
+.back-link span { margin-right: 3px; }
+
 .help-button {
   display: flex;
   gap: 8px;
@@ -432,6 +446,9 @@ dialog form { display: flex; justify-content: flex-end; margin-top: 26px; }
 }
 
 @media (max-width: 350px) {
+  .masthead { padding-inline: 12px; }
+  .header-actions { gap: 8px; }
+  .help-button { padding-left: 4px; gap: 5px; }
   .movement { display: grid; }
   .playback { justify-content: space-between; }
   .speed-control { width: min(145px, 64%); }

@@ -1,16 +1,17 @@
 {
-  "name": "equine-atlas",
+  "name": "horses-benchmark",
   "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node build.js --serve",
-    "build": "node build.js"
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1"
   },
   "dependencies": {
     "three": "0.187.0"
   },
   "devDependencies": {
-    "esbuild": "0.28.2"
+    "vite": "8.3.8"
   }
 }
