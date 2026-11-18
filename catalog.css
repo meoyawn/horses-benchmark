@@ -54,14 +54,8 @@ a:focus-visible { outline: 2px solid #9b7539; outline-offset: 5px; }
   letter-spacing: 0;
 }
 
-.site-nav {
-  display: flex;
-  align-items: center;
+.source {
   flex: none;
-  gap: clamp(12px, 2vw, 24px);
-}
-
-.site-nav a {
   padding-block: 8px;
   color: #4a5546;
   font-size: 13px;
@@ -69,22 +63,40 @@ a:focus-visible { outline: 2px solid #9b7539; outline-offset: 5px; }
   text-decoration: none;
 }
 
-.site-nav a:hover { text-decoration: underline; }
+.source:hover { text-decoration: underline; }
 
-main { padding-block: clamp(18px, 4vh, 38px) clamp(30px, 5vh, 60px); }
+main { padding-block: clamp(24px, 4.8vh, 50px) clamp(40px, 6.5vh, 72px); }
+
+.prompt { margin-bottom: clamp(24px, 3.6vw, 40px); }
+
+.prompt h1 {
+  margin: 0 0 clamp(17px, 2.5vw, 28px);
+  font: 600 clamp(34px, 4vw, 52px)/1 var(--serif);
+  letter-spacing: -.05em;
+}
+
+.prompt blockquote {
+  max-width: 90ch;
+  margin: 0;
+  padding-inline-start: 14px;
+  border-inline-start: 2px solid #9b7539;
+  color: #455240;
+  font-size: clamp(13px, 1.4vw, 16px);
+  line-height: 1.6;
+  text-wrap: pretty;
+}
 
 .models {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: clamp(12px, 1.7vw, 20px);
+  gap: clamp(14px, 2vw, 24px);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .model {
-  display: flex;
-  flex-direction: column;
+  display: block;
   height: 100%;
   overflow: hidden;
   background: #eeede1;
@@ -95,10 +107,12 @@ main { padding-block: clamp(18px, 4vh, 38px) clamp(30px, 5vh, 60px); }
   transition: box-shadow .18s ease, border-color .18s ease;
 }
 
-.model:hover {
+.model:is(:hover, :focus-visible) {
   border-color: #a6af9a;
   box-shadow: 0 8px 20px #30281b22;
 }
+
+.model-preview { position: relative; }
 
 .model-image {
   display: block;
@@ -109,13 +123,25 @@ main { padding-block: clamp(18px, 4vh, 38px) clamp(30px, 5vh, 60px); }
   background: #cbc3a9;
 }
 
-.model-details {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: clamp(10px, 1.6vw, 19px);
+.model-details { padding: clamp(10px, 1.6vw, 19px); }
+
+.model-arrow {
+  position: absolute;
+  inset-inline-end: 8px;
+  inset-block-end: 8px;
+  display: grid;
+  width: clamp(23px, 2.4vw, 30px);
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 50%;
+  background: #f6f3eb;
+  color: var(--green);
+  box-shadow: 0 1px 5px #26312638;
+  font: 600 16px/1 system-ui, sans-serif;
 }
+
+.model:is(:hover, :focus-visible) .model-arrow { background: var(--green); color: #f6f3eb; }
+.model:is(:hover, :focus-visible) h2 { text-decoration: underline; text-underline-offset: .14em; }
 
 .model h2 {
   margin: 0 0 7px;
@@ -137,35 +163,11 @@ main { padding-block: clamp(18px, 4vh, 38px) clamp(30px, 5vh, 60px); }
   font-weight: 600;
 }
 
-.open {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: auto;
-  padding-top: 10px;
-  color: var(--green);
-  font-size: 12px;
-  font-weight: 650;
-}
-
-.model:hover .open { text-decoration: underline; }
-
-.about {
-  margin-top: clamp(24px, 4vw, 42px);
-  padding-top: clamp(14px, 2vw, 22px);
-  border-top: 1px solid var(--line);
-}
-
-.about h2 { margin: 0 0 6px; font: 600 23px/1.15 var(--serif); letter-spacing: -.03em; }
-.about p { max-width: 70ch; margin: 0; color: #55584b; font-size: 14px; line-height: 1.55; }
-.about blockquote { margin: 10px 0 0; padding-inline-start: 13px; border-inline-start: 2px solid #9b7539; }
-.about blockquote p { color: var(--green); }
-
 @media (max-width: 670px) {
   .masthead-inner { gap: 8px; min-height: 54px; }
   .brand { gap: 7px; }
   .brand-mark { flex-basis: 26px; width: 26px; height: 26px; font-size: 17px; }
-  .site-nav a { font-size: 12px; }
+  .source { font-size: 12px; }
   .models { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 

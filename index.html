@@ -12,69 +12,71 @@
   <body>
     <header class="masthead">
       <div class="masthead-inner">
-        <h1 class="brand"><span class="brand-mark" aria-hidden="true">H</span> Horses benchmark</h1>
-        <nav class="site-nav" aria-label="Site navigation">
-          <a href="#about">About</a>
-          <a href="https://github.com/meoyawn/horses-benchmark">GitHub <span aria-hidden="true">↗</span></a>
-        </nav>
+        <div class="brand"><span class="brand-mark" aria-hidden="true">H</span> Horses benchmark</div>
+        <a class="source" href="https://github.com/meoyawn/horses-benchmark">GitHub <span aria-hidden="true">↗</span></a>
       </div>
     </header>
 
     <main>
-      <ul class="models" aria-label="Horse models">
+      <section class="prompt" aria-labelledby="prompt-title">
+        <h1 id="prompt-title">Prompt</h1>
+        <blockquote>Create a realistic interactive 3d horse with three.js. from scratch, no reusing of existing licensed stuff. verify using @Browser </blockquote>
+      </section>
+
+      <ul class="models" role="list" aria-label="Horse models">
         <li>
           <a class="model" href="./52fablemax/" aria-labelledby="model-52fablemax">
-            <img class="model-image" src="./52fablemax/preview.jpg" width="740" height="419" alt="" />
+            <div class="model-preview">
+              <img class="model-image" src="./52fablemax/preview.jpg" width="740" height="419" alt="" />
+              <span class="model-arrow" aria-hidden="true">→</span>
+            </div>
             <div class="model-details">
               <h2 id="model-52fablemax">52fablemax</h2>
               <p class="generation-time">Generated in <time datetime="PT1H20M">1 hour 20 minutes</time></p>
               <p>335,644 vertices · 34 bones</p>
-              <span class="open">Open model <span aria-hidden="true">→</span></span>
             </div>
           </a>
         </li>
         <li>
           <a class="model" href="./62solmax/" aria-labelledby="model-62solmax">
-            <img class="model-image" src="./62solmax/preview.jpg" width="740" height="419" alt="" />
+            <div class="model-preview">
+              <img class="model-image" src="./62solmax/preview.jpg" width="740" height="419" alt="" />
+              <span class="model-arrow" aria-hidden="true">→</span>
+            </div>
             <div class="model-details">
               <h2 id="model-62solmax">62solmax</h2>
               <p class="generation-time">Generated in <time datetime="PT30M">30 minutes</time></p>
               <p>120,011 vertices · 22 bones</p>
-              <span class="open">Open model <span aria-hidden="true">→</span></span>
             </div>
           </a>
         </li>
         <li>
           <a class="model" href="./62astramax/" aria-labelledby="model-62astramax">
-            <img class="model-image" src="./62astramax/preview.jpg" width="740" height="419" alt="" />
+            <div class="model-preview">
+              <img class="model-image" src="./62astramax/preview.jpg" width="740" height="419" alt="" />
+              <span class="model-arrow" aria-hidden="true">→</span>
+            </div>
             <div class="model-details">
               <h2 id="model-62astramax">62astramax</h2>
               <p class="generation-time">Generated in <time datetime="PT48M">48 minutes</time></p>
               <p>142,102 vertices · 27 bones</p>
-              <span class="open">Open model <span aria-hidden="true">→</span></span>
             </div>
           </a>
         </li>
         <li>
           <a class="model" href="./61solmax/" aria-labelledby="model-61solmax">
-            <img class="model-image" src="./61solmax/preview.jpg" width="740" height="419" alt="" />
+            <div class="model-preview">
+              <img class="model-image" src="./61solmax/preview.jpg" width="740" height="419" alt="" />
+              <span class="model-arrow" aria-hidden="true">→</span>
+            </div>
             <div class="model-details">
               <h2 id="model-61solmax">61solmax</h2>
               <p class="generation-time">Generated in <time datetime="PT35M">35 minutes</time></p>
               <p>275,148 vertices · 21 bones</p>
-              <span class="open">Open model <span aria-hidden="true">→</span></span>
             </div>
           </a>
         </li>
       </ul>
-
-      <section class="about" id="about" aria-labelledby="about-title">
-        <h2 id="about-title">About</h2>
-        <p>These interactive 3D horses were built from a shared prompt.</p>
-        <blockquote>
-          <p>create a realistic interactive 3d horse with three.js. from scratch, no reusing of existing licensed stuff. verify using @Browser </p>
-        </blockquote>
-      </section>
     </main>
   </body>
 </html>
