@@ -76,7 +76,6 @@ main { padding-block: clamp(24px, 4.8vh, 50px) clamp(40px, 6.5vh, 72px); }
 }
 
 .prompt blockquote {
-  max-width: 90ch;
   margin: 0;
   padding-inline-start: 14px;
   border-inline-start: 2px solid #9b7539;
