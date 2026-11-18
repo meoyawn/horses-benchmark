@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>55opusmax · Procedural Horse</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body>
+  <div id="app"></div>
+
+  <header id="title">
+    <a class="back-link" href="/"><span aria-hidden="true">←</span> Models</a>
+    <h1>Horse</h1>
+    <p>Sculpted from signed-distance anatomy · procedural gaits · simulated hair</p>
+  </header>
+
+  <aside id="panel" class="panel">
+    <button id="panel-toggle" class="icon-btn" aria-label="Toggle controls" title="Toggle controls">☰</button>
+    <div class="panel-body">
+      <section>
+        <h2>Gait</h2>
+        <div class="seg" id="gaits">
+          <button data-gait="stand" class="on">Stand</button>
+          <button data-gait="walk">Walk</button>
+          <button data-gait="trot">Trot</button>
+          <button data-gait="canter">Canter</button>
+          <button data-gait="gallop">Gallop</button>
+        </div>
+        <div class="row">
+          <label class="check"><input type="checkbox" id="roam" /> Roam on its own</label>
+          <span class="readout" id="speed">0.0 m/s</span>
+        </div>
+        <div class="row">
+          <label for="slowmo">Time</label>
+          <input type="range" id="slowmo" min="0.1" max="1" step="0.05" value="1" />
+          <span class="readout" id="slowmo-v">1.0×</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Coat</h2>
+        <div class="swatches" id="coats"></div>
+        <div class="row">
+          <label for="face">Face</label>
+          <select id="face">
+            <option value="0">None</option>
+            <option value="1">Star</option>
+            <option value="2">Strip</option>
+            <option value="3" selected>Blaze</option>
+            <option value="4">Bald face</option>
+          </select>
+        </div>
+        <div class="row">
+          <label for="socks">Legs</label>
+          <select id="socks">
+            <option value="none">No white</option>
+            <option value="one" selected>Two socks</option>
+            <option value="hind">Hind socks</option>
+            <option value="four">Four stockings</option>
+          </select>
+        </div>
+      </section>
+
+      <section>
+        <h2>Behaviour</h2>
+        <div class="seg small" id="acts">
+          <button data-act="graze">Graze</button>
+          <button data-act="rest">Rest leg</button>
+          <button data-act="paw">Paw</button>
+          <button data-act="shake">Shake</button>
+          <button data-act="toss">Toss</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Scene</h2>
+        <div class="row">
+          <label for="tod">Sun</label>
+          <input type="range" id="tod" min="0.04" max="0.96" step="0.01" value="0.32" />
+        </div>
+        <div class="row wrap">
+          <label class="check"><input type="checkbox" id="follow" checked /> Follow</label>
+          <label class="check"><input type="checkbox" id="cine" /> Cinematic</label>
+          <label class="check"><input type="checkbox" id="sound" /> Hoof sounds</label>
+        </div>
+        <div class="row wrap">
+          <label class="check"><input type="checkbox" id="skeleton" /> Skeleton</label>
+          <label class="check"><input type="checkbox" id="wire" /> Wireframe</label>
+          <label class="check"><input type="checkbox" id="hairOn" checked /> Hair</label>
+        </div>
+      </section>
+      <p class="stats" id="stats"></p>
+    </div>
+  </aside>
+
+  <footer id="hints">
+    <span><kbd>1</kbd>–<kbd>5</kbd> gait</span>
+    <span><kbd>W</kbd>/<kbd>S</kbd> faster / slower</span>
+    <span><kbd>A</kbd>/<kbd>D</kbd> steer</span>
+    <span>drag to orbit · scroll to zoom · click the horse</span>
+  </footer>
+
+  <div id="loading"><div class="spinner"></div><div id="loading-text">Sculpting the horse…</div></div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
