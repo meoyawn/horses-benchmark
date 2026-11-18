@@ -7,23 +7,21 @@
     <meta name="description" content="Explore interactive 3D horse models built from a shared prompt." />
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="./catalog.css" />
-    <title>Horse Models — Horses Benchmark</title>
+    <title>Horses benchmark</title>
   </head>
   <body>
     <header class="masthead">
       <div class="masthead-inner">
-        <div class="brand"><span class="brand-mark" aria-hidden="true">H</span> Horses Benchmark</div>
-        <a class="source" href="https://github.com/meoyawn/horses-benchmark">GitHub <span aria-hidden="true">↗</span></a>
+        <h1 class="brand"><span class="brand-mark" aria-hidden="true">H</span> Horses benchmark</h1>
+        <nav class="site-nav" aria-label="Site navigation">
+          <a href="#about">About</a>
+          <a href="https://github.com/meoyawn/horses-benchmark">GitHub <span aria-hidden="true">↗</span></a>
+        </nav>
       </div>
     </header>
 
     <main>
-      <div class="intro">
-        <h1 id="models">Horse models</h1>
-        <p>Explore interactive 3D horses built from a shared prompt.</p>
-      </div>
-
-      <ul class="models" aria-labelledby="models">
+      <ul class="models" aria-label="Horse models">
         <li>
           <a class="model" href="./52fablemax/" aria-labelledby="model-52fablemax">
             <img class="model-image" src="./52fablemax/preview.jpg" width="740" height="419" alt="" />
@@ -57,7 +55,26 @@
             </div>
           </a>
         </li>
+        <li>
+          <a class="model" href="./61solmax/" aria-labelledby="model-61solmax">
+            <img class="model-image" src="./61solmax/preview.jpg" width="740" height="419" alt="" />
+            <div class="model-details">
+              <h2 id="model-61solmax">61solmax</h2>
+              <p class="generation-time">Generated in <time datetime="PT35M">35 minutes</time></p>
+              <p>275,148 vertices · 21 bones</p>
+              <span class="open">Open model <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        </li>
       </ul>
+
+      <section class="about" id="about" aria-labelledby="about-title">
+        <h2 id="about-title">About</h2>
+        <p>These interactive 3D horses were built from a shared prompt.</p>
+        <blockquote>
+          <p>create a realistic interactive 3d horse with three.js. from scratch, no reusing of existing licensed stuff. verify using @Browser </p>
+        </blockquote>
+      </section>
     </main>
   </body>
 </html>
