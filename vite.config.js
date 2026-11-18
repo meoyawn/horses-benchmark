@@ -4,6 +4,13 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   appType: 'mpa',
   base: './',
+  experimental: {
+    renderBuiltUrl(filename, { hostType, type }) {
+      if (hostType === 'html' && type === 'asset' && filename.startsWith('assets/social-')) {
+        return `https://horses.adelnz.com/${filename}`;
+      }
+    },
+  },
   build: {
     rolldownOptions: {
       input: {

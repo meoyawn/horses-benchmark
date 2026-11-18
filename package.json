@@ -7,13 +7,14 @@
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
     "preview": "vite preview --host 127.0.0.1",
-    "deploy": "aube dlx wrangler@4.160.0 pages deploy dist --project-name horses --branch main"
+    "deploy": "wrangler pages deploy dist --project-name horses --branch main"
   },
   "dependencies": {
     "three": "0.187.0"
   },
   "devDependencies": {
     "cf": "1.0.0-rc.1",
-    "vite": "8.3.8"
+    "vite": "8.3.8",
+    "wrangler": "4.160.0"
   }
 }
