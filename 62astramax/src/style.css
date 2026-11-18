@@ -40,6 +40,8 @@ h1,h2,h3,p,dl,dd { margin: 0; }
 .guide-link [data-icon] { width: 16px; height: 16px; }
 main { padding-bottom: 32px; }
 .specimen-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; padding-block: clamp(31px,3.2vw,54px) 27px; }
+.back-link { display: inline-flex; align-items: center; gap: 4px; min-height: 24px; margin-bottom: 8px; color: #4c554b; font-size: 13px; font-weight: 600; text-decoration: none; }
+.back-link:hover { text-decoration: underline; }
 .taxonomy, .eyebrow, .specimen-data dt { font-family: var(--sans); font-weight: 650; text-transform: uppercase; font-size: 10px; line-height: 1.2; letter-spacing: 1.65px; }
 .taxonomy { display: flex; align-items: center; gap: 10px; color: #5a6950; }
 .taxonomy > span { width: 24px; height: 1px; background: #839272; }

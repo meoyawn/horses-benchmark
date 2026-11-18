@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>52fablemax · Procedural Horse</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+  <canvas id="scene" aria-label="Interactive 3D horse"></canvas>
+
+  <div id="loading">
+    <div class="loading-card">
+      <div class="loading-title">Sculpting the horse</div>
+      <div class="loading-bar"><div id="loading-fill"></div></div>
+      <div id="loading-step">Preparing…</div>
+    </div>
+  </div>
+
+  <header id="title">
+    <a class="back-link" href="/"><span aria-hidden="true">←</span> Models</a>
+    <h1>Procedural Horse</h1>
+    <p>Every vertex, hair and hoofbeat is generated in code.</p>
+  </header>
+
+  <aside id="help">
+    <div><kbd>Drag</kbd> orbit · <kbd>Wheel</kbd> zoom</div>
+    <div><kbd>Click</kbd> ground to send her there · click the horse to pet</div>
+    <div><kbd>1</kbd>–<kbd>5</kbd> gaits · <kbd>A</kbd>/<kbd>D</kbd> steer · <kbd>Space</kbd> rear</div>
+  </aside>
+
+  <nav id="controls" aria-label="Horse controls">
+    <div class="group" id="gaits" role="group" aria-label="Gait">
+      <button data-gait="stand" class="active">Stand</button>
+      <button data-gait="walk">Walk</button>
+      <button data-gait="trot">Trot</button>
+      <button data-gait="canter">Canter</button>
+      <button data-gait="gallop">Gallop</button>
+    </div>
+    <div class="group" role="group" aria-label="Actions">
+      <button id="btn-rear">Rear</button>
+      <button id="btn-graze">Graze</button>
+      <button id="btn-sound" aria-pressed="false">Sound off</button>
+    </div>
+  </nav>
+
+  <div id="stats"></div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
