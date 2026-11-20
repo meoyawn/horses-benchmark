@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f6f3eb" />
-    <meta name="description" content="Explore interactive 3D horse models built from a shared prompt." />
+    <meta name="theme-color" content="#1a1a17" />
+    <meta name="description" content="Six AI models built a 3D horse from the same prompt. Here is the tier list." />
     <link rel="canonical" href="https://horses.adelnz.com/" />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://horses.adelnz.com/" />
-    <meta property="og:title" content="Horses benchmark" />
-    <meta property="og:description" content="Explore interactive 3D horse models built from a shared prompt." />
+    <meta property="og:title" content="Horses benchmark tier list" />
+    <meta property="og:description" content="Six AI models built a 3D horse from the same prompt. Here is the tier list." />
     <meta property="og:image" content="./src/social-62astramax-preview.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
@@ -23,109 +23,114 @@
     <meta property="og:video:height" content="600" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Horses benchmark" />
-    <meta name="twitter:description" content="Explore interactive 3D horse models built from a shared prompt." />
+    <meta name="twitter:title" content="Horses benchmark tier list" />
+    <meta name="twitter:description" content="Six AI models built a 3D horse from the same prompt. Here is the tier list." />
     <meta name="twitter:image" content="./src/social-62astramax-preview.jpg" />
     <meta name="twitter:image:alt" content="A bay horse standing in a light studio." />
 
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="./catalog.css" />
-    <title>Horses benchmark</title>
+    <title>Horses tier list</title>
   </head>
   <body>
-    <header class="masthead">
-      <div class="masthead-inner">
-        <div class="brand"><span class="brand-mark" aria-hidden="true">H</span> Horses benchmark</div>
-        <a class="source" href="https://github.com/meoyawn/horses-benchmark">GitHub <span aria-hidden="true">↗</span></a>
-      </div>
-    </header>
-
     <main>
-      <section class="prompt" aria-labelledby="prompt-title">
-        <h1 id="prompt-title">Prompt</h1>
-        <blockquote>Create a realistic interactive 3d horse with three.js. from scratch, no reusing of existing licensed stuff. verify using @Browser </blockquote>
-      </section>
+      <header class="title-row">
+        <h1>Horse tier list</h1>
+        <a class="source" href="https://github.com/meoyawn/horses-benchmark">GitHub <span aria-hidden="true">↗</span></a>
+      </header>
+      <blockquote class="prompt">Create a realistic interactive 3d horse with three.js. from scratch, no reusing of existing licensed stuff. verify using @Browser</blockquote>
 
-      <ul class="models" role="list" aria-label="Horse models">
-        <li>
-          <a class="model" href="./52fablemax/" aria-labelledby="model-52fablemax">
-            <div class="model-preview">
-              <img class="model-image" src="./52fablemax/preview.jpg" width="740" height="419" alt="" />
-              <span class="model-arrow" aria-hidden="true">→</span>
-            </div>
-            <div class="model-details">
-              <h2 id="model-52fablemax">52fablemax</h2>
-              <p class="generation-time">Generated in <time datetime="PT1H20M">1 hour 20 minutes</time></p>
-              <p>335,644 vertices · 34 bones</p>
-            </div>
-          </a>
+      <ol class="tiers" role="list" aria-label="Tier list">
+        <li class="tier tier-s">
+          <h2 class="tier-label">S</h2>
+          <ul class="tier-items" role="list" aria-label="S tier">
+            <li>
+              <a class="tile" href="./52fablemax/" aria-labelledby="model-52fablemax">
+                <img src="./52fablemax/preview.jpg" width="740" height="419" alt="" />
+                <span class="tile-caption">
+                  <span class="tile-name" id="model-52fablemax">52fablemax</span>
+                  <span class="tile-stats"><time datetime="PT1H20M">1 hour 20 minutes</time> · 335,644 vertices</span>
+                </span>
+              </a>
+            </li>
+          </ul>
         </li>
-        <li>
-          <a class="model" href="./55opusmax/" aria-labelledby="model-55opusmax">
-            <div class="model-preview">
-              <img class="model-image" src="./55opusmax/preview.jpg" width="740" height="419" alt="" />
-              <span class="model-arrow" aria-hidden="true">→</span>
-            </div>
-            <div class="model-details">
-              <h2 id="model-55opusmax">55opusmax</h2>
-              <p class="generation-time">Generated in <time datetime="PT1H12M">1 hour 12 minutes</time></p>
-              <p>417,238 vertices · 39 bones</p>
-            </div>
-          </a>
+        <li class="tier tier-a">
+          <h2 class="tier-label">A</h2>
+          <ul class="tier-items" role="list" aria-label="A tier">
+            <li>
+              <a class="tile" href="./55opusmax/" aria-labelledby="model-55opusmax">
+                <img src="./55opusmax/preview.jpg" width="740" height="419" alt="" />
+                <span class="tile-caption">
+                  <span class="tile-name" id="model-55opusmax">55opusmax</span>
+                  <span class="tile-stats"><time datetime="PT1H12M">1 hour 12 minutes</time> · 417,238 vertices</span>
+                </span>
+              </a>
+            </li>
+          </ul>
         </li>
-        <li>
-          <a class="model" href="./55opusmedium/" aria-labelledby="model-55opusmedium">
-            <div class="model-preview">
-              <img class="model-image" src="./55opusmedium/preview.jpg" width="740" height="419" alt="" />
-              <span class="model-arrow" aria-hidden="true">→</span>
-            </div>
-            <div class="model-details">
-              <h2 id="model-55opusmedium">55opusmedium</h2>
-              <p class="generation-time">Generated in <time datetime="PT18M">18 minutes</time></p>
-              <p>169,998 vertices · 35 bones</p>
-            </div>
-          </a>
+        <li class="tier tier-b">
+          <h2 class="tier-label">B</h2>
+          <ul class="tier-items" role="list" aria-label="B tier">
+          </ul>
         </li>
-        <li>
-          <a class="model" href="./62solmax/" aria-labelledby="model-62solmax">
-            <div class="model-preview">
-              <img class="model-image" src="./62solmax/preview.jpg" width="740" height="419" alt="" />
-              <span class="model-arrow" aria-hidden="true">→</span>
-            </div>
-            <div class="model-details">
-              <h2 id="model-62solmax">62solmax</h2>
-              <p class="generation-time">Generated in <time datetime="PT30M">30 minutes</time></p>
-              <p>120,011 vertices · 22 bones</p>
-            </div>
-          </a>
+        <li class="tier tier-c">
+          <h2 class="tier-label">C</h2>
+          <ul class="tier-items" role="list" aria-label="C tier">
+            <li>
+              <a class="tile" href="./55opusmedium/" aria-labelledby="model-55opusmedium">
+                <img src="./55opusmedium/preview.jpg" width="740" height="419" alt="" />
+                <span class="tile-caption">
+                  <span class="tile-name" id="model-55opusmedium">55opusmedium</span>
+                  <span class="tile-stats"><time datetime="PT18M">18 minutes</time> · 169,998 vertices</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="tile" href="./62solmax/" aria-labelledby="model-62solmax">
+                <img src="./62solmax/preview.jpg" width="740" height="419" alt="" />
+                <span class="tile-caption">
+                  <span class="tile-name" id="model-62solmax">62solmax</span>
+                  <span class="tile-stats"><time datetime="PT30M">30 minutes</time> · 120,011 vertices</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="tile" href="./62astramax/" aria-labelledby="model-62astramax">
+                <img src="./62astramax/preview.jpg" width="740" height="419" alt="" />
+                <span class="tile-caption">
+                  <span class="tile-name" id="model-62astramax">62astramax</span>
+                  <span class="tile-stats"><time datetime="PT48M">48 minutes</time> · 142,102 vertices</span>
+                </span>
+              </a>
+            </li>
+          </ul>
         </li>
-        <li>
-          <a class="model" href="./62astramax/" aria-labelledby="model-62astramax">
-            <div class="model-preview">
-              <img class="model-image" src="./62astramax/preview.jpg" width="740" height="419" alt="" />
-              <span class="model-arrow" aria-hidden="true">→</span>
-            </div>
-            <div class="model-details">
-              <h2 id="model-62astramax">62astramax</h2>
-              <p class="generation-time">Generated in <time datetime="PT48M">48 minutes</time></p>
-              <p>142,102 vertices · 27 bones</p>
-            </div>
-          </a>
+        <li class="tier tier-d">
+          <h2 class="tier-label">D</h2>
+          <ul class="tier-items" role="list" aria-label="D tier">
+            <li>
+              <a class="tile" href="./61solmax/" aria-labelledby="model-61solmax">
+                <img src="./61solmax/preview.jpg" width="740" height="419" alt="" />
+                <span class="tile-caption">
+                  <span class="tile-name" id="model-61solmax">61solmax</span>
+                  <span class="tile-stats"><time datetime="PT35M">35 minutes</time> · 275,148 vertices</span>
+                </span>
+              </a>
+            </li>
+          </ul>
         </li>
-        <li>
-          <a class="model" href="./61solmax/" aria-labelledby="model-61solmax">
-            <div class="model-preview">
-              <img class="model-image" src="./61solmax/preview.jpg" width="740" height="419" alt="" />
-              <span class="model-arrow" aria-hidden="true">→</span>
-            </div>
-            <div class="model-details">
-              <h2 id="model-61solmax">61solmax</h2>
-              <p class="generation-time">Generated in <time datetime="PT35M">35 minutes</time></p>
-              <p>275,148 vertices · 21 bones</p>
-            </div>
-          </a>
+        <li class="tier tier-e">
+          <h2 class="tier-label">E</h2>
+          <ul class="tier-items" role="list" aria-label="E tier">
+          </ul>
         </li>
-      </ul>
+        <li class="tier tier-f">
+          <h2 class="tier-label">F</h2>
+          <ul class="tier-items" role="list" aria-label="F tier">
+          </ul>
+        </li>
+      </ol>
     </main>
   </body>
 </html>
