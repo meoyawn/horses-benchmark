@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>55opusmedium · Procedural Horse</title>
+<link rel="icon" href="data:," />
+<style>
+  :root { --panel: rgba(18, 20, 16, 0.62); --ink: #f3efe6; --muted: #b9b4a8; --accent: #e4b46a; }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #c9d6dc; font: 13px/1.4 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--ink); }
+  canvas { display: block; width: 100vw; height: 100vh; touch-action: none; }
+  #panel { position: fixed; top: 16px; left: 16px; width: 248px; max-width: calc(100vw - 32px); box-sizing: border-box; padding: 14px; border-radius: 14px; background: var(--panel); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 6px 24px rgba(0,0,0,.18); }
+  .back-link { display: inline-block; margin-bottom: 10px; color: var(--ink); font-weight: 600; text-decoration: none; font-size: 12px; }
+  .back-link:hover { text-decoration: underline; }
+  h1 { font-size: 15px; margin: 0 0 10px; letter-spacing: .02em; font-weight: 650; }
+  .label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; margin: 10px 0 6px; }
+  .row { display: flex; flex-wrap: wrap; gap: 6px; }
+  button { font: inherit; color: var(--ink); background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.14); border-radius: 8px; padding: 5px 10px; cursor: pointer; transition: background .15s, border-color .15s; }
+  button:hover { background: rgba(255,255,255,.2); }
+  button.on { background: var(--accent); color: #1d160c; border-color: var(--accent); font-weight: 600; }
+  button.swatch { width: 30px; height: 30px; padding: 0; border-radius: 50%; border: 2px solid rgba(255,255,255,.25); }
+  button.swatch.on { border-color: #fff; box-shadow: 0 0 0 2px var(--accent); }
+  label.check { display: flex; align-items: center; gap: 6px; margin-top: 10px; color: var(--muted); cursor: pointer; }
+  #help { margin-top: 10px; color: var(--muted); font-size: 12px; }
+  kbd { font: 11px ui-monospace, monospace; background: rgba(255,255,255,.12); border-radius: 4px; padding: 0 4px; }
+  #hud { position: fixed; right: 16px; top: 16px; background: var(--panel); padding: 6px 10px; border-radius: 10px; font-variant-numeric: tabular-nums; text-transform: capitalize; }
+  #stats { position: fixed; right: 16px; bottom: 12px; color: rgba(30,35,25,.65); font-size: 11px; }
+  #toast { position: fixed; left: 50%; top: 22%; transform: translate(-50%, 8px); opacity: 0; transition: opacity .25s, transform .25s; background: var(--panel); padding: 6px 12px; border-radius: 10px; font-style: italic; pointer-events: none; }
+  #toast.show { opacity: 1; transform: translate(-50%, 0); }
+  #loading { position: fixed; inset: 0; display: grid; place-items: center; background: #c9d6dc; color: #33402a; font-size: 15px; transition: opacity .5s; }
+  #loading.hidden { opacity: 0; pointer-events: none; }
+  @media (max-width: 600px) { #panel { top: auto; bottom: 16px; } #help { display: none; } }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="panel">
+  <a class="back-link" href="/"><span aria-hidden="true">←</span> Models</a>
+  <h1>Procedural Horse</h1>
+  <div class="label">Gait</div>
+  <div class="row" id="gaits"></div>
+  <div class="label">Coat</div>
+  <div class="row" id="coats"></div>
+  <div class="label">Actions</div>
+  <div class="row"><button id="rear">Rear</button><button id="graze">Graze</button></div>
+  <label class="check"><input type="checkbox" id="follow" checked> Head follows pointer</label>
+  <div id="help">Drag to orbit · scroll to zoom · click the horse to pet it<br><kbd>W</kbd>/<kbd>S</kbd> gait · <kbd>A</kbd>/<kbd>D</kbd> steer · <kbd>R</kbd> rear · <kbd>G</kbd> graze</div>
+</div>
+<div id="hud">stand</div>
+<div id="toast"></div>
+<div id="stats"></div>
+<div id="loading">Sculpting horse…</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
