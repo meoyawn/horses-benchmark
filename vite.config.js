@@ -22,6 +22,7 @@ export default defineConfig({
         '62solmax': resolve(import.meta.dirname, '62solmax/index.html'),
         '62astramax': resolve(import.meta.dirname, '62astramax/index.html'),
         '4neonxhigh': resolve(import.meta.dirname, '4neonxhigh/index.html'),
+        '4carbonhigh': resolve(import.meta.dirname, '4carbonhigh/index.html'),
       },
     },
   },

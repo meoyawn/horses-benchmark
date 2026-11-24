@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4carbonhigh · Equus 3D Procedural Horse</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div id="canvas-container"></div>
+
+    <!-- Top Brand & Telemetry Bar -->
+    <header class="top-bar">
+      <div class="brand">
+        <a class="back-link" href="/"><span aria-hidden="true">←</span> Models</a>
+        <span class="brand-badge">100% PROCEDURAL</span>
+        <h1>Equus 3D</h1>
+        <p class="subtitle">Sculpted SDF Anatomy · 48-Bone Rig · Biomechanical Gaits</p>
+      </div>
+      <div class="top-actions">
+        <button id="toggle-hud-btn" class="pill-btn" title="Toggle Controls Panel (H)">Hide UI</button>
+      </div>
+    </header>
+
+    <!-- Interactive Controls Panel -->
+    <aside id="hud-panel" class="hud-panel">
+      <section class="control-group">
+        <div class="group-label">Equine Gait</div>
+        <div class="segmented" id="gait-buttons">
+          <button data-gait="idle">Idle</button>
+          <button data-gait="walk">Walk</button>
+          <button data-gait="trot" class="active">Trot</button>
+          <button data-gait="canter">Canter</button>
+          <button data-gait="gallop">Gallop</button>
+        </div>
+      </section>
+
+      <section class="control-group">
+        <div class="group-label">Interactive Actions</div>
+        <div class="action-grid">
+          <button class="action-btn" data-action="rear">Rear Up</button>
+          <button class="action-btn" data-action="graze">Graze</button>
+          <button class="action-btn" data-action="whinny">Whinny</button>
+          <button class="action-btn" data-action="pet">Pet Horse</button>
+        </div>
+      </section>
+
+      <section class="control-group">
+        <div class="group-label">Movement Mode</div>
+        <div class="segmented" id="mode-buttons">
+          <button data-mode="inPlace" class="active">In-Place</button>
+          <button data-mode="circle">Paddock Circle</button>
+          <button data-mode="roam">WASD Ride</button>
+        </div>
+      </section>
+
+      <section class="control-group">
+        <div class="group-label">Coat Genetics</div>
+        <div class="coat-swatches" id="coat-buttons">
+          <button data-coat="bay" class="coat-chip active" title="Blood Bay">
+            <span class="swatch" style="background: radial-gradient(circle at 35% 35%, #9e3e1b, #4a1708)"></span>
+            <span>Bay</span>
+          </button>
+          <button data-coat="dappleGrey" class="coat-chip" title="Dapple Grey">
+            <span class="swatch" style="background: radial-gradient(circle at 35% 35%, #dfe3e8, #6d7279)"></span>
+            <span>Dapple</span>
+          </button>
+          <button data-coat="friesianBlack" class="coat-chip" title="Friesian Black">
+            <span class="swatch" style="background: radial-gradient(circle at 35% 35%, #373e4c, #0d0e11)"></span>
+            <span>Friesian</span>
+          </button>
+          <button data-coat="chestnut" class="coat-chip" title="Fiery Chestnut">
+            <span class="swatch" style="background: radial-gradient(circle at 35% 35%, #cf652b, #732d10)"></span>
+            <span>Chestnut</span>
+          </button>
+          <button data-coat="palomino" class="coat-chip" title="Golden Palomino">
+            <span class="swatch" style="background: radial-gradient(circle at 35% 35%, #edd298, #a37230)"></span>
+            <span>Palomino</span>
+          </button>
+          <button data-coat="buckskin" class="coat-chip" title="Wild Buckskin">
+            <span class="swatch" style="background: radial-gradient(circle at 35% 35%, #cfa263, #5c3f1c)"></span>
+            <span>Buckskin</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="control-group">
+        <div class="group-label">Camera &amp; Environment</div>
+        <div class="segmented" id="camera-buttons">
+          <button data-cam="hero" class="active">3/4 Hero</button>
+          <button data-cam="profile">Profile</button>
+          <button data-cam="portrait">Portrait</button>
+          <button data-cam="low">Low Angle</button>
+        </div>
+        <div class="segmented mt-6" id="env-buttons">
+          <button data-env="goldenHour" class="active">Golden Hour</button>
+          <button data-env="highNoon">Noon</button>
+          <button data-env="studio">Studio</button>
+        </div>
+      </section>
+
+      <section class="control-group">
+        <div class="slider-header">
+          <span class="group-label" style="margin:0">Time Scale</span>
+          <span id="speed-readout" class="readout">1.00×</span>
+        </div>
+        <input id="speed-slider" type="range" min="0.15" max="1.35" step="0.05" value="1.0" />
+        <div class="toggles-row">
+          <label class="check-label">
+            <input type="checkbox" id="gaze-toggle" checked />
+            <span>Cursor Gaze</span>
+          </label>
+          <label class="check-label">
+            <input type="checkbox" id="skeleton-toggle" />
+            <span>Show Rig</span>
+          </label>
+        </div>
+      </section>
+
+      <footer class="hud-hint">
+        Drag to orbit · Scroll to zoom · Click horse to pet · <strong>WASD</strong> + <strong>Shift</strong> to ride · <strong>Space</strong> to rear
+      </footer>
+    </aside>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
