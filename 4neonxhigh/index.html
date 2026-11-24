@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4neonxhigh · Equus Procedural Horse</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div id="canvas-container"></div>
+
+    <header class="brand-badge">
+      <a class="back-link" href="/"><span aria-hidden="true">←</span> Models</a>
+      <div class="brand-title">EQUUS</div>
+      <div class="brand-sub">Procedural 3D Warmblood · Three.js</div>
+    </header>
+
+    <button id="hud-toggle" class="hud-toggle" title="Toggle Controls" aria-label="Toggle Controls">
+      <span>Controls</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 9l6 6 6-6"/>
+      </svg>
+    </button>
+
+    <aside id="hud-panel" class="hud-panel">
+      <section class="hud-section">
+        <div class="section-header">
+          <span>Gait &amp; Motion</span>
+          <button id="btn-play-pause" class="mini-btn" title="Play / Pause">Pause</button>
+        </div>
+        <div class="pill-grid cols-5" id="gait-buttons">
+          <button data-gait="idle" class="pill active">Idle</button>
+          <button data-gait="walk" class="pill">Walk</button>
+          <button data-gait="trot" class="pill">Trot</button>
+          <button data-gait="canter" class="pill">Canter</button>
+          <button data-gait="gallop" class="pill">Gallop</button>
+        </div>
+        <div class="slider-row">
+          <label for="speed-slider">Speed</label>
+          <input type="range" id="speed-slider" min="0.25" max="1.8" step="0.05" value="1.0" />
+          <span id="speed-val">1.00×</span>
+        </div>
+        <div class="pill-grid cols-3" id="action-buttons">
+          <button data-action="rear" class="pill accent">Rear Up</button>
+          <button data-action="shake" class="pill accent">Head Shake</button>
+          <button data-action="graze" class="pill accent">Graze</button>
+        </div>
+      </section>
+
+      <section class="hud-section">
+        <div class="section-header"><span>Coat &amp; Markings</span></div>
+        <div class="swatch-grid" id="coat-swatches">
+          <button data-coat="bay" class="swatch active" title="Classic Bay">
+            <span class="swatch-dot" style="background: linear-gradient(135deg, #6e3619 55%, #191310 100%)"></span>
+            <span class="swatch-name">Bay</span>
+          </button>
+          <button data-coat="dappleGrey" class="swatch" title="Dapple Grey">
+            <span class="swatch-dot" style="background: radial-gradient(circle at 35% 35%, #e2e4e6, #8f949a)"></span>
+            <span class="swatch-name">Dapple</span>
+          </button>
+          <button data-coat="chestnut" class="swatch" title="Copper Chestnut">
+            <span class="swatch-dot" style="background: linear-gradient(135deg, #99451d 55%, #6a2d12 100%)"></span>
+            <span class="swatch-name">Chestnut</span>
+          </button>
+          <button data-coat="black" class="swatch" title="Friesian Black">
+            <span class="swatch-dot" style="background: linear-gradient(135deg, #2a2829 30%, #0d0c0d 100%)"></span>
+            <span class="swatch-name">Black</span>
+          </button>
+          <button data-coat="palomino" class="swatch" title="Golden Palomino">
+            <span class="swatch-dot" style="background: linear-gradient(135deg, #c69648 55%, #ede3cb 100%)"></span>
+            <span class="swatch-name">Palomino</span>
+          </button>
+          <button data-coat="buckskin" class="swatch" title="Dun Buckskin">
+            <span class="swatch-dot" style="background: linear-gradient(135deg, #b88c52 55%, #1d1712 100%)"></span>
+            <span class="swatch-name">Buckskin</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="hud-section">
+        <div class="section-header"><span>Atmosphere &amp; Lighting</span></div>
+        <div class="pill-grid cols-4" id="lighting-buttons">
+          <button data-light="golden" class="pill active">Golden</button>
+          <button data-light="daylight" class="pill">Daylight</button>
+          <button data-light="dawn" class="pill">Dawn</button>
+          <button data-light="studio" class="pill">Studio</button>
+        </div>
+      </section>
+
+      <section class="hud-section">
+        <div class="section-header"><span>Camera Views</span></div>
+        <div class="pill-grid cols-4" id="camera-buttons">
+          <button data-cam="hero" class="pill active">Hero 3/4</button>
+          <button data-cam="side" class="pill">Profile</button>
+          <button data-cam="head" class="pill">Head</button>
+          <button data-cam="front" class="pill">Front</button>
+        </div>
+      </section>
+
+      <section class="hud-section">
+        <div class="section-header"><span>Details &amp; Inspection</span></div>
+        <div class="toggle-grid">
+          <label class="toggle-item"><input type="checkbox" id="toggle-halter" checked /><span>Leather Halter</span></label>
+          <label class="toggle-item"><input type="checkbox" id="toggle-cursor" checked /><span>Look at Cursor</span></label>
+          <label class="toggle-item"><input type="checkbox" id="toggle-sound" /><span>Hoof Audio</span></label>
+          <label class="toggle-item"><input type="checkbox" id="toggle-skeleton" /><span>Skeleton Rig</span></label>
+          <label class="toggle-item"><input type="checkbox" id="toggle-wireframe" /><span>Wireframe</span></label>
+        </div>
+      </section>
+    </aside>
+
+    <div class="hint-bar" id="hint-bar">
+      Drag to orbit · Scroll to zoom · Click horse to interact · Keys 1–5 for gaits
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
