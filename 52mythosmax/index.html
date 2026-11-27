@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>52mythosmax · Procedural Horse</title>
+<link rel="icon" href="data:,">
+<style>
+  :root { --glass: rgba(18, 22, 20, 0.52); --line: rgba(255, 255, 255, 0.16); --ink: #f3f1ea; --accent: #e8b96a; }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #9fb6c9; color: var(--ink);
+    font: 14px/1.35 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
+  canvas#view { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+  canvas#view:active { cursor: grabbing; }
+  .panel { position: fixed; background: var(--glass); border: 1px solid var(--line); border-radius: 14px;
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+  #title { top: 14px; left: 14px; padding: 10px 14px; max-width: min(340px, calc(100vw - 28px)); }
+  #title h1 { margin: 0 0 2px; font-size: 15px; letter-spacing: 0.02em; }
+  .back-link { display: inline-block; margin-bottom: 6px; color: var(--ink); font-size: 12px; font-weight: 600; text-decoration: none; }
+  .back-link:hover { text-decoration: underline; }
+  .back-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  #title p { margin: 0; opacity: 0.78; font-size: 12.5px; }
+  #status { margin-top: 6px; font-variant-numeric: tabular-nums; color: var(--accent); font-size: 12.5px; }
+  #bar { left: 50%; bottom: 14px; transform: translateX(-50%); padding: 8px; display: flex; flex-wrap: wrap;
+    gap: 6px; justify-content: center; max-width: calc(100vw - 28px); box-sizing: border-box; }
+  .group { display: flex; gap: 4px; align-items: center; }
+  .sep { width: 1px; align-self: stretch; background: var(--line); margin: 0 2px; }
+  button, select { font: inherit; color: var(--ink); background: rgba(255, 255, 255, 0.08); border: 1px solid var(--line);
+    border-radius: 9px; padding: 7px 11px; cursor: pointer; }
+  button:hover, select:hover { background: rgba(255, 255, 255, 0.16); }
+  button.on { background: var(--accent); color: #2a1c08; border-color: transparent; font-weight: 600; }
+  select option { color: #111; }
+  #loading { position: fixed; inset: 0; display: grid; place-items: center; background: #1b211d; z-index: 10;
+    transition: opacity 0.6s; font-size: 15px; letter-spacing: 0.04em; }
+  #loading.done { opacity: 0; pointer-events: none; }
+  @media (max-width: 640px) { #title p { display: none; } button, select { padding: 7px 9px; } }
+</style>
+</head>
+<body>
+<canvas id="view"></canvas>
+<div id="loading">Sculpting the horse…</div>
+
+<div id="title" class="panel">
+  <a class="back-link" href="/"><span aria-hidden="true">←</span> Models</a>
+  <h1>Procedural Horse</h1>
+  <p>Drag to orbit, scroll to zoom. Click the ground to send the horse there, click the horse to pet it. Arrow keys / WASD steer.</p>
+  <div id="status"></div>
+</div>
+
+<div id="bar" class="panel">
+  <div class="group" id="gaits">
+    <button data-gait="0">Stand</button>
+    <button data-gait="1">Walk</button>
+    <button data-gait="2">Trot</button>
+    <button data-gait="3">Canter</button>
+    <button data-gait="4">Gallop</button>
+  </div>
+  <div class="sep"></div>
+  <div class="group">
+    <button id="rear">Rear</button>
+    <button id="graze">Graze</button>
+  </div>
+  <div class="sep"></div>
+  <div class="group">
+    <select id="coat" aria-label="Coat colour">
+      <option value="bay">Bay</option>
+      <option value="chestnut">Chestnut</option>
+      <option value="black">Black</option>
+      <option value="palomino">Palomino</option>
+      <option value="grey">Dapple grey</option>
+    </select>
+    <button id="markings" class="on">Markings</button>
+    <button id="slow">Slow-mo</button>
+    <button id="bones">Skeleton</button>
+  </div>
+</div>
+
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
